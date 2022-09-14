@@ -1,21 +1,28 @@
-package com.Exception;
+package Thread;
 
-public class Thread3  extends Thread{
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Thread t3=new Thread3();
-		try {
-			System.out.println("Hi");
-			t3.sleep(5000000);
-			System.out.println("sleep");
-		
+public class Thread3  implements Runnable{
 	
-	}
-	catch(Exception ex) {
-		ex.getStackTrace();
+	public static void main(String[] args) {
 		
+		Runnable r=new Thread3();
+		r.run();
 	}
-}
+	@Override
+	public void run(){
+		System.out.println("Doing heavy processing-START"+Thread.currentThread().getName());
+		try {
+			Thread.sleep(1000);
+			//Get database connection,deleted unused data from the db
+			doDBProcessing();
+		}
+		catch(InterruptedException e ) {
+			e.printStackTrace();
+		}
+		System.out.println("Doing heavy processing-END"+Thread.currentThread().getName());
+	}
+	private void doDBProcessing()throws InterruptedException{
+		Thread.sleep(50000);
+	}
+	
 }
 
