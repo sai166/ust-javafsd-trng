@@ -1,16 +1,29 @@
-package com.exg;
+package com.Exception;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class Exception3 {
+
+	public static void findFile() throws IOException {
+		// TODO Auto-generated method stub
+		//code that generates IOException
+		File newFile=new File("C:\\Users\\ustjavafsdb210\\text.txt");
+		FileInputStream stream = new FileInputStream(newFile);
+
+	}
+	
 	public static void main(String[] args) {
 		try {
-			int array[]=new int[10];
-			array[10]=30/0;
-		} catch (ArithmeticException e) {
-			System.out.println(e.getMessage());
+			findFile();
+			
 		}
-		catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println(e.getMessage());
+		catch(IOException e) {
+			System.out.println(e);
 		}
 	}
+	
+	
 
 }

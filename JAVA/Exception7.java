@@ -1,24 +1,34 @@
-package com.exg;
+package com.Exception;
 
-//Java program to demonstrate working of throws
-
-public class Exception7 
-{
-	static void fun()throws IllegalAccessException
+//java program that demonstrates the use of the trows
+public class Exception7 {
+	
+	 public static void fun()
 	{
-		System.out.println("Inside fun().");
-		throw new IllegalAccessException("demo");
-	}
-	public static void main(String[] args)
-	{
-		try
-		{
-			fun();
+		try {
+			throw new NullPointerException("Demo");
 		}
-		catch(IllegalAccessException e)
-		{
-			System.out.println("caught in mai.n");
-		}
+		catch(NullPointerException e)
+	
+		{	
+		System.out.println("caught inside fun().");
+		
+		throw e;//rethrowing the exception
+		
 	}
-
+	
 }
+public static void main(String[] args) {
+	try {
+		fun();
+		
+	}
+
+	catch(NullPointerException e) {
+		System.out.println("caught in main.");
+	}
+	
+	
+}
+}
+
