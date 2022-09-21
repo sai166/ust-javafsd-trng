@@ -1,0 +1,74 @@
+create databAse ORG;
+SHOW DATABASES;
+use ORG;
+create table worker(
+worker_id int not null primary key,
+FIRST_NAME varchar(30),
+LAST_NAME varchar(30),
+SALARY int,
+JONING_DATE VARCHAR(50),
+dEPARTMENT varchar(30));
+show tables;
+desc WORKER;
+insert INTO WORKER value(001,"Monika","Arora",100000,'2014-02-20 09:00:00',"HR"),
+(002,"Niharika","Verma",80000,'2014-06-11 09:00:00',"Admin"),
+(003,"Vishal","Singhal",300000,'2014-02-20 09:00:00',"HR"),
+(004,"Amitabh","Singh",500000,'2014-02-20 09:00:00',"Admin"),
+(005,"Vivek","Bhati",500000,'2014-06-11 09:00:00',"Admin"),
+(006,"Vipul","Diwan",200000,'2014-06-11 09:00:00',"Account"),
+(007,"Satish","Kumar",75000,'2014-01-20 09:00:00',"Account"),
+(008,"Geetika","Chauhan",90000,'2014-04-11 09:00:00',"Admin");
+
+SELECT*FROM WORKER;
+
+
+
+drop table bonus;
+create table Bonus(
+worker_ref_id int not nulL,
+bonus_date  varchar(30),
+bonus_ammount int);
+insert INTO Bonus value(1,'2016-02-20 00:00:00',5000),
+(2,'2016-06-11 00:00:00',3000),
+(3,'2016-02-20 00:00:00',4000),
+(1,'2016-02-20 00:00:00',4500),
+(2,'2016-06-11 00:00:00',3500);
+SELECT*FROM bonus;
+desc bonus;
+
+create table table_title(
+worker_Ref_id int not nulL,
+Worker_Title  varchar(30),
+Affected_From varchar(30));
+alter table table_title
+modify  Affected_From varchar(30);
+
+insert INTO table_title value(1,"Manager",'2016-02-20 00:00:00'),
+(2,"Executive",'2016-06-11 00:00:00'),
+(8,"Executive",'2016-06-11 00:00:00'),
+(5,"Manager",'2016-06-11 00:00:00'),
+(4,"Asst.Manager",'2016-06-11 00:00:00'),
+(7,"Execute",'2016-06-11 00:00:00'),
+(6,"Lead",'2016-06-11 00:00:00'),
+(3,"Lead",'2016-06-11 00:00:00');
+select*from table_title;
+desc table_title;
+use ORG;
+Select FIRST_NAME AS WORKER_NAME from Worker;
+Select UPPER(FIRST_NAME) AS WORKER_NAME from Worker;
+SELECT department from worker
+SUBSTRING( string, star_position,length );
+SELECT SUBSTRING(first_name,1,3) from worker;
+SELECT instr(FIRST_NAME,BINARY'A')from worker where FIRST_NAME='Amitabh';
+select rtrim(First_name) from worker;
+
+
+
+
+
+
+
+
+
+
+
