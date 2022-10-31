@@ -1,6 +1,11 @@
 package com.ust;
 
 public class For_ex4 {
+	/**
+	 * Main.
+	 *
+	 * @param args the args
+	 */
 	public static void main(String[]args) {
 		//create an array
 		int[] numbers= {3,7,5,-5};
